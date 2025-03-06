@@ -1,0 +1,118 @@
+#login {
+  h1 {
+    font-weight: 900;
+  }
+
+  P {
+    color: gray;
+  }
+
+  button {
+    width: 100%;
+    height: 50px;
+    font-weight: 700;
+    color: black;
+    background-color: #ffca40;
+    border: 0;
+    border-radius: 10px;
+  }
+
+  span {
+    font-weight: 700;
+    color: grey;
+  }
+
+  .inputContainer {
+    width: 100%;
+    height: 50px;
+    position: relative;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+  }
+
+  .styledInputBar {
+    height: 100%;
+    width: 100%;
+    padding: 1em;
+    font-size: 1em;
+    border: 0;
+    border-radius: 10px;
+    background-color: transparent;
+    color: black;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+  }
+
+  .styledInputBar::placeholder {
+    color: grey;
+    transition: all 0.3s ease;
+  }
+
+  .inputLabel {
+    position: absolute;
+    left: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: grey;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  .styledInputBar:focus + .inputLabel,
+  .styledInputBar:not(:placeholder-shown) + .inputLabel {
+    top: 0.1em;
+    left: 1em;
+    font-size: 0.8em;
+    color: black;
+    background-color: #f5f5f5;
+    padding: 0 0.5em;
+    border-radius: 10px;
+  }
+
+  .styledInputBar:not(:focus):not(:placeholder-shown) + .inputLabel {
+    color: grey;
+  }
+
+  .eyeIcon {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    color: gray;
+    cursor: pointer;
+    transition: 300ms linear;
+
+    &:hover {
+      transform: scale(1.2, 1.2);
+      color: black;
+    }
+  }
+
+  .btn {
+    width: 45%;
+    height: 50px;
+    border: 1px solid var(--grey);
+    border-radius: 10px;
+    background: transparent;
+    transition: 300ms linear;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    @media screen and (max-width: 767px) {
+      font-size: 10px;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+      background-color: #ebebeb;
+    }
+
+    .icon {
+      font-size: 20px;
+    }
+  }
+}
