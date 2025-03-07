@@ -5,8 +5,13 @@ import styles from "./index.module.css";
 import { ImFacebook2 } from "react-icons/im";
 import { FcGoogle } from "react-icons/fc";
 import { FaEyeSlash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function LoginPage() {
+  const handleLogin = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="col-12 h-100 d-flex">
       <div
@@ -25,7 +30,11 @@ export default function LoginPage() {
       </div>
 
       <div className="col-7 h-100 d-flex align-items-center justify-content-center">
-        <form className="col-8 d-flex flex-column gap-3" id={styles.login}>
+        <form
+          onSubmit={handleLogin}
+          className="col-8 d-flex flex-column gap-3"
+          id={styles.login}
+        >
           <div className="col-12">
             <h1>Welcome Back !</h1>
             <p>Please, sign in to continue</p>
@@ -60,11 +69,11 @@ export default function LoginPage() {
           <span className="col-12 text-center">or</span>
 
           <div className="d-flex justify-content-around">
-            <button className={styles.btn}>
+            <button type="button" className={styles.btn}>
               <FcGoogle className={styles.icon} /> Sign up with Google
             </button>
 
-            <button className={styles.btn}>
+            <button type="button" className={styles.btn}>
               <ImFacebook2
                 className={styles.icon}
                 style={{ color: "#0a53be" }}
@@ -73,9 +82,9 @@ export default function LoginPage() {
             </button>
           </div>
 
-          <a href="" className="text-decoration-none col-12 text-center">
+          <Link className="text-decoration-none col-12 text-center">
             Forgot password?
-          </a>
+          </Link>
 
           <p className="col-12 text-center">
             Don't have an account? Go to Register
